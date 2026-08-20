@@ -1,8 +1,20 @@
 import '../home_styles.css'
 
 
-function CarCard({car}) {
+function CarCard({car, setSelectedCars, selectedCars}) {
 
+    function selectCarHandler(e) {
+        const selectedCar = `${car.company} ${car.model} ${car.year}`;
+        if(e.target.checked) {
+            console.log(selectedCar);
+            setSelectedCars([...selectedCars, selectedCar])
+        }
+        else if(!e.target.checked) {
+            const newSelectedCarsArray = selectedCars.filter((c)=> c !== selectedCar);
+            setSelectedCars(newSelectedCarsArray);
+        }
+        console.log("Selected cars: ", selectedCars)
+    }
     return (
         <>
             <div className="car-card">
@@ -15,7 +27,7 @@ function CarCard({car}) {
                     <p className="fuel-mileage">Fuel mileage: {car.fuelMileage}km</p>
                     <p className="four-year-resale">4yr resale: PKR {car.resaleValueYears.toLocaleString()}</p>
                     <p className="distance-resale">60,000km resale: PKR {car.resaleValueDistance.toLocaleString()}</p>
-                    <input type="checkbox" className="select-car-checkbox"></input>
+                    <input type="checkbox" className="select-car-checkbox" onChange={selectCarHandler}></input>
                 </div>
             </div>
         </>

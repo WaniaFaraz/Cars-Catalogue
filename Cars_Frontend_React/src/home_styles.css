@@ -247,6 +247,10 @@ body {
     width:0.4cm;
 }
 
+.car-card:has(.select-car-checkbox:checked) {
+    border: solid 2px var(--darkred);
+}
+
 /* ----------- .right-panel ------------------ */
 .right-panel {
     display: block;
@@ -285,5 +289,13 @@ body {
 .underline.under-add {
     width: 3.5cm;
     margin: 0.2cm auto 0.2cm 0.2cm;
+}
+
+.delete-button {
+    background-color: var(--red);
+}
+
+.delete-button:hover {
+    background-color: var(--darkred)
 }
 

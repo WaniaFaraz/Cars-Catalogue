@@ -5,18 +5,22 @@ import { formatPkr } from "./menuHelpers.js";
 
 function LeftFilterMenuCategory({ innerText, type, options, id, cars, name, filters, setFilters }) {
 
+    /*
     //stuff for ranges/sliders
     const [ranges, setRanges] = useState({
         //for the sliders in the price and resale value filtering
-        price: [0, 20000000],
-        resaleValueYears: [0, 20000000],
-        resaleValueDistance: [0, 20000000]
+        //holds the min and max possible of all cars
+        price: [],
+        resaleValueYears: [],
+        resaleValueDistance: []
     });
+    */
 
     const [displayedRanges, setDisplayedRanges] = useState({
-        price: [0,20000000],
-        resaleValueYears: [0, 20000000],
-        resaleValueDistance: [0, 20000000]
+        //what is displayed underneath, the actual values of the sliders
+        price: [],
+        resaleValueYears: [],
+        resaleValueDistance: []
     })
 
     const calculateBounds = useMemo(() => {
@@ -37,6 +41,13 @@ function LeftFilterMenuCategory({ innerText, type, options, id, cars, name, filt
         const resaleValueYearsMax = Math.max(...resaleValueYearsList);
         const resaleValueDistanceMin = Math.min(...resaleValueDistanceList)
         const resaleValueDistanceMax = Math.max(...resaleValueDistanceList)
+        /*
+        setRanges({
+            price: [0, priceMax],
+            resaleValueYears: [0, resaleValueYearsMax],
+            resaleValueDistance: [0, resaleValueDistanceMax]
+        })
+            */
         return {
             price: [priceMin, priceMax],
             resaleValueYears: [resaleValueYearsMin, resaleValueYearsMax],
@@ -50,7 +61,7 @@ function LeftFilterMenuCategory({ innerText, type, options, id, cars, name, filt
             ...filters,
             [name]: [values[0], values[1]]
         })
-        
+
     }
     //to display the current range selected
     function valueChangeHandler(name, values) {
@@ -112,8 +123,8 @@ function LeftFilterMenuCategory({ innerText, type, options, id, cars, name, filt
             {type === "range" && (
                 <li className="left-filter-menu-category"><button className="button-color-change">{innerText}</button>
                     <Slider
-                        defaultValue={[0, 100000]}
-                        min={calculateBounds[name][0]? calculateBounds[name][0]-10000 : 0}
+                        defaultValue={[0, 0]}
+                        min={calculateBounds[name][0] ? calculateBounds[name][0] - 10000 : 0}
                         max={calculateBounds[name][1] + 10000}
                         step={((calculateBounds[name][1] + 10000) - calculateBounds[name][0]) / 100}
                         name={name}

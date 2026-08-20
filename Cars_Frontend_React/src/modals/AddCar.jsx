@@ -53,13 +53,18 @@ function AddCar({ modalState, setModalState, onClose, onCarsAdded }) {
             const isSuccess = response.data;
             if (isSuccess) {
                 console.log("Car added successfully!");
-                form.reset();
                 onCarsAdded();
+                console.log("On cars added done")
                 onClose();
+                resetForm(form);
             }
         } catch (error) {
             console.error("Axios POST request failed:", error);
         }
+    }
+
+    function resetForm(form) {
+        form.reset();
     }
 
     return (

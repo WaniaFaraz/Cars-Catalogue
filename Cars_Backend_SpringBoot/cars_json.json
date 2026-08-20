@@ -33,23 +33,6 @@
   "name" : "Nissan Pathfinder 2015",
   "type" : "Fuel"
 }, {
-  "company" : "Chevrolet",
-  "model" : "BlazerEV",
-  "year" : 2000,
-  "price" : 2000000000,
-  "resaleValueYears" : 2000000,
-  "resaleValueDistance" : 2000000,
-  "numSeats" : 5,
-  "drive" : [ "AWD" ],
-  "length" : -1.0,
-  "features" : [ "Sun roof", "Lane Keeping Assist", "Anti-lock Braking System" ],
-  "image" : "https://www.google.com/imgres?q=chevrolet%20blazer%20ev&imgurl=https%3A%2F%2Fwww.popsci.com%2Fwp-content%2Fuploads%2F2022%2F06%2F17%2F2024-chevrolet-blazer-ev-ss.jpg&imgrefurl=https%3A%2F%2Fwww.popsci.com%2Ftechnology%2Fchevy-blazer-ev%2F&docid=wBHzRkFjEaZikM&tbnid=rKsDCEvyS86unM&vet=12ahUKEwjhnLXgga-WAxWb_rsIHYYzHScQnPAOegQINRAA..i&w=2000&h=1337&hcb=2&ved=2ahUKEwjhnLXgga-WAxWb_rsIHYYzHScQnPAOegQINRAA",
-  "mileage" : 6000,
-  "electricityMileage" : "Not applicable",
-  "fuelMileage" : 6000,
-  "name" : "Chevrolet BlazerEV 2000",
-  "type" : "Fuel"
-}, {
   "company" : "Honda",
   "model" : "Civic",
   "year" : 2012,
@@ -82,5 +65,22 @@
   "electricityMileage" : "Not applicable",
   "fuelMileage" : 5000,
   "name" : "Toyota Yaris 2006",
+  "type" : "Fuel"
+}, {
+  "company" : "Toyota",
+  "model" : "test ui",
+  "year" : 2006,
+  "price" : 2,
+  "resaleValueYears" : 60,
+  "resaleValueDistance" : 66,
+  "numSeats" : 5,
+  "drive" : [ "AWD" ],
+  "length" : 60.0,
+  "features" : [ "Autonomous Emergency Braking" ],
+  "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1UZUHjn83OBnlzo331JXnw58BdkoDXJ1KyJ1TPpokbg&s=10",
+  "mileage" : 600,
+  "electricityMileage" : "Not applicable",
+  "fuelMileage" : 600,
+  "name" : "Toyota test ui 2006",
   "type" : "Fuel"
 } ]

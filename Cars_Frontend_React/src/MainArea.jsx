@@ -12,10 +12,10 @@ function MainArea() {
         company: [],
         drive: [],
         numSeats: [],
-        price: [0, 140000000],
-        year: 2000,
-        resaleValueYears: [0, 500000000],
-        resaleValueDistance: [0, 500000000]
+        price: [],
+        year: 0,
+        resaleValueYears: [],
+        resaleValueDistance: []
     })
 
 
@@ -23,19 +23,34 @@ function MainArea() {
         fetchCars();
     }, [])
 
+    useEffect(() => {
+        console.log("Debugging cars array", cars);
+    }, [cars])
+
     async function fetchCars() {
         const response = await api.get('/get-catalogue');
         const data = response.data;
-        setCars(data);
+        setCars([...data]);
+        setFilters({
+            company: [],
+            drive: [],
+            numSeats: [],
+            price: [],
+            year: 0,
+            resaleValueYears: [],
+            resaleValueDistance: []
+        })
+        return data;
     }
 
+    const [selectedCars, setSelectedCars] = useState([]);
 
 
     return (
         <div className="main-area">
             <LeftFilterMenu cars={cars} filters={filters} setFilters={setFilters} />
-            <CarsArea cars={cars} filters={filters} />
-            <RightPanel onCarsAdded={fetchCars} />
+            <CarsArea cars={cars} filters={filters} selectedCars={selectedCars} setSelectedCars={setSelectedCars} />
+            <RightPanel onCarsAdded={fetchCars} selectedCars={selectedCars} setSelectedCars={setSelectedCars} />
         </div>
     )
 }

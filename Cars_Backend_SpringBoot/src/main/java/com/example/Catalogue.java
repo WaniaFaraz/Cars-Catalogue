@@ -395,6 +395,17 @@ public class Catalogue {
         return new ArrayList<>(allCompanies);
     }
 
+    public synchronized List<String> getAllFeatures() {
+        Set<String> allFeatures = new HashSet<>();
+        for(Car car: carsList) {
+            List<String> features = car.getFeatures();
+            for(String feature: features) {
+                allFeatures.add(feature);
+            }
+        }
+        return new ArrayList<>(allFeatures);
+    }
+
     //--------  PERSISTENCE - SAVE AND LOAD
     /* 
     public boolean save(String filename) throws FileNotFoundException, IOException {

@@ -6,13 +6,13 @@ import CarsCardArea from './cars-card-area/CarsCardArea.jsx'
 
 
 
-function CarsArea({cars, filters}) {
+function CarsArea({cars, filters, selectedCars, setSelectedCars}) {
 
     
     return (
         <div className="cars-area">
         <FilterDisplayLine />
-        <CarsCardArea cars={cars} filters={filters} />
+        <CarsCardArea cars={cars} filters={filters} selectedCars={selectedCars} setSelectedCars={setSelectedCars} />
         </div>
     )
 }

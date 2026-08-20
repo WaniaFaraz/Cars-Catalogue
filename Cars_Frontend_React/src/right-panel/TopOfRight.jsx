@@ -1,10 +1,11 @@
 import RightPanelButton from "./RightPanelButton"
-
 import AddCar from "../modals/AddCar"
 
 import { useState } from "react"
 
-function TopOfRight({onCarsAdded}) {
+import api from '../../axiosConfig'
+
+function TopOfRight({onCarsAdded, selectedCars, setSelectedCars}) {
     //add car button state:  to make the other buttons appear
     const [buttonsState, setButtonsState] = useState(false);
 
@@ -24,9 +25,21 @@ function TopOfRight({onCarsAdded}) {
             type: type
         })
     }
+
+    async function deleteCarOnClick() {
+        const deleteCars = confirm("Are you sure you would like to delete all the selected cars?");
+        if(deleteCars) {
+            await api.post('delete-cars', {carNames: selectedCars})
+            onCarsAdded();
+            console.log("Car deleted successfully");
+            
+        }
+        
+    }
     return (
         <>
             <div className="top-of-right">
+                {(selectedCars && selectedCars.length > 0) && <RightPanelButton innerText="Delete cars" className="right-panel-button delete-button" selectedCars={selectedCars} setSelectedCars={setSelectedCars} onClick={deleteCarOnClick} />}
                 <RightPanelButton innerText="Edit Cars" className="right-panel-button" />
                 <RightPanelButton innerText="Add Car" className="right-panel-button" onClick={addCarOnClick} />
                 {buttonsState &&
@@ -40,7 +53,7 @@ function TopOfRight({onCarsAdded}) {
                 <span className="underline under-add"></span>
 
             </div>
-            <AddCar modalState={modalState} setModalState={setModalState} onClose={() => setModalState({ isOpen: false, type: "none" })} onCarsAdded={onCarsAdded} />
+            <AddCar modalState={modalState} setModalState={setModalState} onClose={() => setModalState({ isOpen: false, type: "none"})} onCarsAdded={onCarsAdded} />
         </>
     )
 }

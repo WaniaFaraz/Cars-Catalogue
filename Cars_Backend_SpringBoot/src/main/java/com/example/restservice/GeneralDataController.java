@@ -25,4 +25,9 @@ public class GeneralDataController {
     public List<String> getAllCompanies() {
         return catalogue.getAllCompanies();
     }
+
+    @GetMapping("/features")
+    public List<String> getAllFeatures() {
+        return catalogue.getAllFeatures();
+    }
 }

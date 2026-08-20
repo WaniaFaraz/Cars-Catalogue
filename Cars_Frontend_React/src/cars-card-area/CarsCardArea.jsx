@@ -1,5 +1,5 @@
 import CarCard from './CarCard.jsx'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
 /*
 const cars = [{
@@ -37,7 +37,7 @@ const cars = [{
 }]
 */
 
-function CarsCardArea({ cars, filters }) {
+function CarsCardArea({ cars, filters, selectedCars, setSelectedCars }) {
 
   const displayedCars = cars.filter((car) => {
     //company
@@ -45,7 +45,7 @@ function CarsCardArea({ cars, filters }) {
       return false;
     }
     //price
-    if (car.price < filters.price[0] || car.price > filters.price[1]) {
+    if (filters.price.length > 0 && (car.price < filters.price[0] || car.price > filters.price[1])) {
       return false;
     }
     //seats
@@ -62,11 +62,11 @@ function CarsCardArea({ cars, filters }) {
       return false;
     }
     //resaleValue after 4 years
-    if (car.resaleValueYears < filters.resaleValueYears[0] || car.resaleValueYears > filters.resaleValueYears[1]) {
+    if (filters.resaleValueYears.length > 0 && (car.resaleValueYears < filters.resaleValueYears[0] || car.resaleValueYears > filters.resaleValueYears[1])) {
       return false;
     }
     //resaleValue after 60,000 km
-    if (car.resaleValueDistance < filters.resaleValueDistance[0] || car.resaleValueDistance > filters.resaleValueDistance[1]) {
+    if (filters.resaleValueDistance.length > 0 &&( car.resaleValueDistance < filters.resaleValueDistance[0] || car.resaleValueDistance > filters.resaleValueDistance[1])) {
       return false;
     }
     //features
@@ -74,10 +74,13 @@ function CarsCardArea({ cars, filters }) {
 
     return true;
   })
+
+ 
+
   const carsList = useMemo(
     () => {
       return displayedCars.map((car) => {
-        return <CarCard key={car.name} car={car} />
+        return <CarCard key={car.name} car={car} setSelectedCars={setSelectedCars} selectedCars={selectedCars} />
       })
     }, [displayedCars]
   )
