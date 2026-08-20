@@ -1,0 +1,61 @@
+:root {
+    --red:#C73232;
+    --darkred: #8f2c2c;
+    --paperwhite: #F7F7F7;
+    --black: #000000;
+    --white: #FFFFFF;
+}
+
+.SliderRoot {
+	position: relative;
+	display: flex;
+	align-items: center;
+	user-select: none;
+	touch-action: none;
+	width: 200px;
+	height: 20px;
+    margin-left: 1cm;
+}
+
+.SliderTrack {
+    background-color: white;
+	/* background-color: var(--black-a10); */
+	position: relative;
+	flex-grow: 1;
+	border-radius: 9999px;
+	height: 3px;
+    
+}
+
+.SliderRange {
+	position: absolute;
+    background-color: var(--red);
+	/* background-color: white; */
+	border-radius: 9999px;
+	height: 100%;
+}
+
+.SliderThumb {
+	display: block;
+	width: 10px;
+	height: 10px;
+	background-color: white;
+	box-shadow: 0 2px 10px var(--black-a7);
+	border-radius: 10px;
+}
+.SliderThumb:hover {
+	background-color: var(--violet-3);
+}
+.SliderThumb:focus {
+	outline: none;
+	box-shadow: 0 0 0 4.5px var(--darkred);
+}
+
+/* my styles */
+.left-filter-menu-category p{
+	font-size: 9pt;
+	font-family: inter;
+	margin-left: 0.8cm;
+	margin-top: 0.2cm;
+	color: grey;
+}

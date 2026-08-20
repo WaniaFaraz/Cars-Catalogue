@@ -1,0 +1,36 @@
+[ {
+  "company" : "Toyota",
+  "model" : "Land Cruiser Prado",
+  "year" : 2006,
+  "price" : 14000000,
+  "resaleValueYears" : 1400000,
+  "resaleValueDistance" : 140000,
+  "numSeats" : 7,
+  "drive" : ["AWD"],
+  "length" : -1.0,
+  "features" : [ "features" ],
+  "mileage" : 140,
+  "electricityMileage" : "Not applicable",
+  "fuelMileage" : 140,
+  "name" : "Toyota Land Cruiser Prado 2006",
+  "type" : "Fuel",
+  "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNUjsNvup9hE7klvO5kUVjvCOlz84OTzX5rkGBYeWkfw&s=10"
+}, {
+  "company" : "Nissan",
+  "model" : "Pathfinder",
+  "year" : 2015,
+  "price" : 140000000,
+  "resaleValueYears" : 1400000,
+  "resaleValueDistance" : 140000,
+  "numSeats" : 7,
+  "drive" : ["AWD", "4WD"],
+  "length" : -1.0,
+  "features" : [ "sun roof", "stereo" ],
+  "mileage" : 140,
+  "electricityMileage" : "Not applicable",
+  "fuelMileage" : 140,
+  "name" : "Nissan Pathfinder 2015",
+  "type" : "Fuel",
+  "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNUjsNvup9hE7klvO5kUVjvCOlz84OTzX5rkGBYeWkfw&s=10"
+
+} ]

@@ -1,0 +1,289 @@
+/* import fonts (google) */
+
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --red:#C73232;
+    --darkred: #8f2c2c;
+    --paperwhite: #F7F7F7;
+    --black: #000000;
+    --white: #FFFFFF;
+}
+
+* {
+    margin:0;
+    padding:0;
+    border:0px black solid;
+    box-sizing: border-box;
+    font-family: arsenal;
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+    height: 100vh;
+    
+}
+
+.cars-card-area {
+    scrollbar-color: var(--paperwhite) var(--paperwhite);
+}
+
+#root {
+    height: 100vh;
+}
+
+/*  MISCELLANEOUS */
+.underline {
+    display: block;
+    height:0px;
+    width: 80%;
+    border: 1.5px solid #000000;
+    border-radius: 0.5cm;
+}
+
+.font1 {
+    font-family: arsenal;
+}
+
+.font2 {
+    font-family: inter;
+    font-weight: 200;
+    font-size: 12pt;
+
+}
+/* ------------------- MAIN MAPPING ------------------------*/
+/* top-bar, main-area, left-filter-menu, cars-area */
+.top-bar {
+    background-color: #000000;
+    height: 15%;
+    width:100%;
+}
+
+.main-area {
+    display:flex;
+    flex-direction: row;
+    flex-grow: 1;
+    background-color: #F7F7F7;
+    height:85%;
+    overflow:clip;
+}
+
+.left-filter-menu {
+    width: 7cm;
+    border-right: 2px #000000 solid;
+    overflow: none;
+    height: 100%;
+}
+
+.cars-area {
+    flex-grow:1;
+}
+
+.cars-card-area {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.right-panel {
+    width: 2in;
+    
+}
+
+
+/* -------- area below top bar ------------*/
+/*  .cars-area, .left-filter-menu - rough alignment and main padding, etc.     */
+
+.left-filter-menu, .cars-area, .right-panel {
+    padding-top: 1cm;
+
+}
+
+/* -------- grouped fonts and font styles------------*/
+.mini-title {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+/* -------- left menu ------------*/
+
+.left-filter-menu-title {
+    margin-bottom: 0.2cm;
+    justify-content: space-between;
+    display: flex;
+    width: 80%;
+    padding-left: 0.6cm;
+}
+
+.left-filter-menu .underline {
+    margin-left: 0.2cm;
+}
+
+.menu-options button {
+    background-color: #F7F7F7;
+    width: 100%;
+    text-align: left;
+    font-size: 12pt;
+    
+
+}
+
+
+.category-sub-option:hover {
+    background-color: var(--red);
+    color: #D9D9D9;
+}
+
+.category-sub-option label input {
+    margin-right: 0.2cm;
+}
+
+.left-filter-menu-title img {
+    height: 0.7cm;
+    width:0.7cm;
+    
+}
+
+.menu-options {
+    padding-top: 0.4cm;
+    list-style-type: none;
+}
+
+.left-filter-menu-category button {
+    padding-left: 0.6cm;
+    padding-top: 0.1cm;
+    padding-bottom:0.1cm;
+}
+.category-sub-group {
+    list-style-type: none;
+    margin-bottom: 0.2cm;
+}
+
+.category-sub-option label {
+    padding-left: 1cm;
+    padding-bottom: 0.1cm;
+    padding-top: 0.1cm;
+}
+
+/* -------- .cars-card-area ------------*/
+.cars-card-area {
+    display : grid;
+    padding: 1cm 2cm 2cm 2cm;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    row-gap: 1cm;
+}
+
+.filter-display {
+    display: flex;
+    margin-left: 1cm;
+    padding-bottom: 0.4cm;
+}
+
+.filter-display-title {
+    margin-right: 1cm;
+}
+
+.filter-display label {
+    padding: 0.15cm 0;
+    text-align: center;
+    width: 3cm;
+    background-color: #D9D9D9;
+    margin-right: 1cm;
+    border-radius: 0.5cm;
+}
+
+.filter-display label:hover {
+    background-color: var(--red);
+    color: #f9f9f9;
+}
+
+.filter-display input {
+    display: none;
+}
+
+.filter-display label:has(input:checked) {
+    background-color: var(--darkred);
+    color: #f9f9f9;
+}
+
+
+.car-card {
+    padding: 0.2cm 0.7cm;
+    height:10cm;
+    width:7.3cm;
+    background-color:#FFFFFF;
+    position:relative;
+    border-radius: 2%;
+}
+
+.car-card-image img {
+    display:block;
+    object-fit:cover;
+    height: 1.4in;
+    width: 2.4in;
+    margin: 0.4cm auto auto auto;
+}
+
+.car-card .car-name {
+    font-weight: bold;
+    text-align: right;
+    margin-top: 0.3cm;
+    font-size: 14pt;
+}
+
+.car-card .year {
+    text-align: right;
+    font-size: 14pt;
+    font-style: italic;
+}
+
+.car-card .select-car-checkbox{
+    position: absolute;
+    bottom: 0.5cm;
+    right: 0.5cm;
+    height: 0.4cm;
+    width:0.4cm;
+}
+
+/* ----------- .right-panel ------------------ */
+.right-panel {
+    display: block;
+    position: relative;
+}
+
+.bottom-of-right {
+    position: absolute;
+    bottom: 1cm;
+}
+.right-panel-button {
+    display:block;
+    width: 3.5cm;
+    margin: 0.2cm auto 0.2cm 0.2cm;
+    background-color: var(--black);
+    color: var(--paperwhite);
+    font-size: 12pt;
+    font-family: arsenal;
+    padding: 0.15cm 0;
+    border-radius: 0.2cm;
+}
+
+.right-panel-button.temp {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.right-panel-button:hover {
+    background-color: var(--red);
+}
+
+.right-panel-button:active {
+    background-color: var(--darkred);
+}
+
+.underline.under-add {
+    width: 3.5cm;
+    margin: 0.2cm auto 0.2cm 0.2cm;
+}
+

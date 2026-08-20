@@ -1,0 +1,89 @@
+<!DOCTYPE html5>
+<html lang="en">
+    <head>
+        <title>Car catalogue</title>
+        <link rel="stylesheet" href="home_styles.css">
+    </head>
+    <body>
+        <div class="top-bar">
+
+        </div>
+        <div class="main-area">
+            <div class="left-filter-menu">
+                <div class="left-filter-menu-title mini-title">Filters<img src="icons/icons8-filter-96.png"></div>
+                <span class="underline"></span>
+                <ul class="menu-options">
+                    <li class="left-filter-menu-category"><button class="button-color-change">Company</button></li>
+                    <ul class="category-sub-group">
+                        <li class="category-sub-option"><label for="Toyota"><input type="checkbox" class="checkbox-color-change" id="Toyota" />Toyota</label></li>
+                        <li class="category-sub-option"><label for="Hyundai"><input type="checkbox" class="checkbox-color-change" id="Hyundai"/>Hyundai</label></li>
+                        <li class="category-sub-option"><label for="Honda"><input type="checkbox" class="button-color-change" id="Honda"/>Honda</label></li>
+                    </ul>
+                    <ul>
+                        <li class="left-filter-menu-category"><button>Price</button></li>
+                        
+                    </ul>
+                    
+                    <li class="left-filter-menu-category"><button>Year</button></li>
+                    <li class="left-filter-menu-category"><button>Seats</button></li>
+                    <li class="left-filter-menu-category"><button>Drive</button></li>
+                    <li class="left-filter-menu-category"><button>Resale Value (4yrs)</button></li>
+                    <li class="left-filter-menu-category"><button>Resale Value (60,000 km)</button></li>
+                    <li class="left-filter-menu-category"><button>Features</button></li>
+                </ul>
+            </div>
+            <div class="cars-area">
+                <div class="filter-display"><p class="mini-title filter-display-title">Show</p>
+                    <label><input type="checkbox">Price</input></label>
+                    <label><input type="checkbox">Mileage</input></label>
+                    <label><input type="checkbox">Resale</input></label>
+                </div>
+                <div class="cars-card-area">
+                    <div class="car-card">
+                        <div class="car-card-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEnr3PltMWlNafL8Eg-kyyIKi1BM-M08TTuri6xPsMYw&s=10"></div>
+                        <div class="car-card-info">
+                            <p class="car-name">Toyota Fortuner G</p>
+                            <p class="year">2018</p>
+                            <p class="initial-price font2">PKR 12,435,000</p>
+                            <p class="drive-and-seats font2">AWD, 7 seater</p>
+                            <p class="fuel-mileage font2">Fuel mileage: 640km</p>
+                            <p class="four-year-resale font2">4yr resale: PKR 200,000</p>
+                            <p class="distance-resale font2">60,000km resale: PKR 300,000</p>
+                            <input type="checkbox" class="select-car-checkbox">
+                        </div>
+                    </div>
+                    <div class="car-card">
+
+                    </div>
+                    <div class="car-card">
+
+                    </div>
+                    <div class="car-card">
+
+                    </div><div class="car-card">
+
+                    </div>
+                    
+                    
+
+                </div>
+                
+            </div>
+            <div class="right-panel">
+                    <div class="top-of-right">
+                        <button class="right-panel-button">Edit Cars</button>
+                        <button class="right-panel-button">Add Car</button>
+                        <button class="right-panel-button temp" id="fuel-car">Fuel Car</button>
+                        <button class="right-panel-button temp" id="phev">PHEV</button>
+                        <button class="right-panel-button temp" id="hev">HEV</button>
+                        <span class="underline under-add"></span>
+                    </div>
+                    <div class="bottom-of-right">
+                        <button class="right-panel-button">Compare</button>
+                    </div>
+                    
+                    
+                </div>
+        </div>
+    </body>
+</html>

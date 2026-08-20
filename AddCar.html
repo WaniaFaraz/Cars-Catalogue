@@ -1,0 +1,107 @@
+<!DOCTYPE html5>
+
+<head>
+    <link rel="stylesheet" href="AddCar_styles.css">
+</head>
+
+<body>
+    <div class="add-car-modal">
+        <div class="modal-title">Add Fuel Car</div>
+        <form id="add-car-form">
+            <div class="modal-body">
+                <div class="modal-body-left">
+                    <div class="hide"><input type="text" name="type" value="fuel"></div>
+                    <div class="modal-row">
+                        <div class="modal-vertical-block">
+                            <p class="input-title">Brand</p>
+                            <input type="text" id="brand" name="company" placeholder="Ex: Toyota" />
+                        </div>
+                    </div>
+
+                    <div class="modal-row">
+                        <div class="modal-vertical-block">
+                            <p class="input-title">Model</p>
+                            <input type="text" id="model" name="model" placeholder="Ex: Land Cruiser Prado" />
+                        </div>
+                    </div>
+
+                    <div class="modal-row">
+                        <div class="modal-vertical-block">
+                            <p class="input-title">Number of seats</p>
+                            <input type="text" id="numSeats" name="numSeats" placeholder="Ex: 5" />
+                        </div>
+                        <div class="modal-vertical-block">
+                            <p class="input-title">Drive</p>
+                            <select name="drive" multiple size="1">
+                                <option value="AWD">AWD</option>
+                                <option value="RWD">RWD</option>
+                                <option value="FWD">FWD</option>
+                                <option value="4WD">4WD</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="modal-row">
+                        <div class="modal-vertical-block">
+                            <p class="input-title">Mileage (km)</p>
+                            <input type="text" id="mileage" name="mileage" placeholder="Ex: 6,000" />
+                        </div>
+                        <div class="modal-vertical-block">
+                            <p class="input-title">Length</p>
+                            <input type="text" id="length" name="length" placeholder="Ex: 5 (-1 if unknown)" />
+                        </div>
+                    </div>
+
+                    <div class="modal-row">
+                        <div class="modal-vertical-block">
+                            <p class="input-title">Resale Value after 4 years (PKR)</p>
+                            <input type="text" id="resaleValueYears" name="resaleValueYears"
+                                placeholder="Ex: 2000000" />
+                        </div>
+                    </div>
+
+                    <div class="modal-row">
+                        <div class="modal-vertical-block">
+                            <p class="input-title">Resale Value after 60,000 km (PKR)</p>
+                            <input type="text" id="resaleValueDistance" name="resaleValueDistance"
+                                placeholder="Ex: 2000000" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body-right">
+                    <div class="modal-row grow">
+                        <div class="modal-vertical-block">
+                            <p class="input-title">Features</p>
+                            <p class="input-sub-title">Select all that apply</p>
+                            <div class="features-button-container">
+                                <label class="feature-button"><input type=checkbox value="Sun roof"
+                                        name="features" />Sun
+                                    roof</label>
+                                <label class="feature-button"><input type=checkbox value="Lane Keeping Assist"
+                                        name="features" />Lane Keeping Assist</label>
+                                <label class="feature-button"><input type=checkbox value="Anti-lock Braking System"
+                                        name="features" />Anti-lock Braking System</label>
+                                <label class="feature-button"><input type=checkbox value="360 Camera"
+                                        name="features" />360 Camera</label>
+                                <label class="feature-button"><input type=checkbox value="Autonomous Emergency Braking"
+                                        name="features" />Autonomous Emergency Braking</label>
+                                <label class="feature-button"><input type=checkbox value="Adaptive Cruise Control"
+                                        name="features" />Adaptive Cruise Control</label>
+
+                                <label class="add-feature-button"><button name="add-feature"><img
+                                            src="icons8-plus-24.png" /></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-row no-grow">
+                        <div class="modal-vertical-block">
+                            <p class="input-title">Image URL</p>
+                            <input type="text" id="image" name="image" placeholder="Enter image URL" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" action="/api/addCar" for="add-car-form" class="add-car-submit-button">Add Car</button>
+        </form>
+    </div>
+</body>
