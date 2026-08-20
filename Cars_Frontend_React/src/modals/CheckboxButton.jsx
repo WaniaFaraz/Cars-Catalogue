@@ -5,7 +5,7 @@ function CheckboxButton({name, value}) {
     //value: value of checkbox - also the inner text
     return (
         <label className="feature-button">
-            <input type="checkbox" value={value} name={name} />{name}</label>
+            <input type="checkbox" value={value} name={name} />{value}</label>
     )
 }
 

@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -89,44 +90,44 @@ public class CatalogueController {
     }
 
     @PostMapping("/addCar")
-    public boolean addCar(@RequestParam Map<String, String> allParams) {
+    public boolean addCar(@RequestParam MultiValueMap<String, String> allParams) {
         //adds a car to the map - which adds it to the list
-        String type = allParams.get("type");
+        String type = allParams.getFirst("type");
         boolean success;
         //extract attributes
-        String company = allParams.get("company");
-        String model = allParams.get("model");
-        int year = Integer.parseInt(allParams.get("year"));
-        int price = Integer.parseInt(allParams.get("price"));
-        int resaleValueYears = Integer.parseInt(allParams.get("resaleValueYears"));
-        int resaleValueDistance = Integer.parseInt(allParams.get("resaleValueDistance"));
-        int numSeats = Integer.parseInt(allParams.get("numSeats"));
-        String drive = allParams.get("drive");
-        List<String> driveList = Arrays.asList(drive.split(","));
-        double length = Double.parseDouble(allParams.get("length"));
-        String featuresString = allParams.get("features");
-        List<String> features = new ArrayList<>(Arrays.asList(featuresString.split(",")));
-        String image = allParams.get("image");
+        String company = allParams.getFirst("company");
+        String model = allParams.getFirst("model");
+        int year = Integer.parseInt(allParams.getFirst("year"));
+        int price = Integer.parseInt(allParams.getFirst("price"));
+        int resaleValueYears = Integer.parseInt(allParams.getFirst("resaleValueYears"));
+        int resaleValueDistance = Integer.parseInt(allParams.getFirst("resaleValueDistance"));
+        int numSeats = Integer.parseInt(allParams.getFirst("numSeats"));
+        List<String> drive = allParams.get("drive");
+        double length = Double.parseDouble(allParams.getFirst("length"));
+        List<String> features = allParams.get("features");
+        System.out.println("features: " + features);
+        String image = allParams.getFirst("image");
         if(type.equals("Fuel")) {
-            int fuelMileage = Integer.parseInt(allParams.get("fuelMileage"));
-            success = catalogue.addFuelCar(company, model, year, price, resaleValueYears, resaleValueDistance, numSeats, driveList, length, features, image, fuelMileage);
+            int fuelMileage = Integer.parseInt(allParams.getFirst("fuelMileage"));
+            success = catalogue.addFuelCar(company, model, year, price, resaleValueYears, resaleValueDistance, numSeats, drive, length, features, image, fuelMileage);
         }
         else if (type.equals("HEV")) {
-            int electricityMileage = Integer.parseInt(allParams.get("electricityMileage"));
-            int fuelMileage = Integer.parseInt(allParams.get("fuelMileage"));
-            success = catalogue.addHEV(company, model, year, price, resaleValueYears, resaleValueDistance, numSeats, driveList, length, features,image, fuelMileage, electricityMileage);
+            int electricityMileage = Integer.parseInt(allParams.getFirst("electricityMileage"));
+            int fuelMileage = Integer.parseInt(allParams.getFirst("fuelMileage"));
+            success = catalogue.addHEV(company, model, year, price, resaleValueYears, resaleValueDistance, numSeats, drive, length, features,image, fuelMileage, electricityMileage);
         }
         else if(type.equals("PHEV")) {
-            int fuelMileage = Integer.parseInt(allParams.get("fuelMileage"));
-            int electricityMileage = Integer.parseInt(allParams.get("electriciyMileage"));
-            double chargingTime = Double.parseDouble(allParams.get("chargingTime"));
-            String charger = allParams.get("charger");
-            success = catalogue.addPHEV(company, model, year, price, resaleValueYears, resaleValueDistance, numSeats, driveList, length, features,image, fuelMileage, electricityMileage, chargingTime, charger);
+            int fuelMileage = Integer.parseInt(allParams.getFirst("fuelMileage"));
+            int electricityMileage = Integer.parseInt(allParams.getFirst("electriciyMileage"));
+            double chargingTime = Double.parseDouble(allParams.getFirst("chargingTime"));
+            String charger = allParams.getFirst("charger");
+            success = catalogue.addPHEV(company, model, year, price, resaleValueYears, resaleValueDistance, numSeats, drive, length, features,image, fuelMileage, electricityMileage, chargingTime, charger);
         }
         else {
             return false;
         }
         saveCars();
+        
         return success;
     }
 

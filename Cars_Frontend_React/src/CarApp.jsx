@@ -10,7 +10,6 @@ function CarApp() {
     <>
     <div className="top-bar"></div>
     <MainArea />
-    <AddCar />
     </>
   )
 }

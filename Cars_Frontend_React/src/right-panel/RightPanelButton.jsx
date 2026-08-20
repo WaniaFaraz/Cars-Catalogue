@@ -1,8 +1,8 @@
 
-function RightPanelButton({innerText, id, className}) {
+function RightPanelButton({innerText, id, className, onClick}) {
 
     return(
-        <button id={id}  className={className}>{innerText}</button>
+        <button id={id}  className={className} onClick={onClick}>{innerText}</button>
     )
 }
 

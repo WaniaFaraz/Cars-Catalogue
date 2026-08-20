@@ -1,4 +1,5 @@
 import CheckboxButton from "./CheckboxButton"
+import plusIcon from "../assets/icons/icons8-plus-24.png"
 
 const listOfFeatures = [
         "Sun roof",
@@ -21,7 +22,7 @@ function ButtonArea({title, subtitle}) {
             <p className="input-sub-title">{subtitle}</p>
             <div className="features-button-container">
                 {displayedFeatureButtons}
-                <label className="add-feature-button"><button name="add-feature" /><img src="icons8-plus-24.png" /></label>
+                <label className="add-feature-button"><button name="add-feature" /><img src={plusIcon} /></label>
             </div>
         </div>
     )
